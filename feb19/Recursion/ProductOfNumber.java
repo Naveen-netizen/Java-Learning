@@ -1,4 +1,4 @@
-package feb19;
+package feb19.Recursion;
 
 public class ProductOfNumber {
     public static void main(String[] args) {

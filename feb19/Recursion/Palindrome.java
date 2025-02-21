@@ -1,8 +1,15 @@
-package feb19;
+package feb19.Recursion;
 
-public class Reverse {
+public class Palindrome {
+
     public static void main(String[] args) {
-        System.out.println(reverse(1200));
+        int n = 010;
+        System.out.println(ispalindrome(n));
+    }
+
+    static boolean ispalindrome(int n) {
+        int rev = reverse(n);
+        return n == rev;
     }
 
     static int reverse(int a) {
@@ -16,6 +23,6 @@ public class Reverse {
         }
         int rem = n % 10;
         n = n / 10;
-        return (rem *(int) (Math.pow(10, digit - 1)) + helper(n, digit - 1));
+        return (rem * (int) (Math.pow(10, digit - 1)) + helper(n, digit - 1));
     }
 }
