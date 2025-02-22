@@ -1,4 +1,4 @@
-package feb22;
+package feb22.Recursion;
 
 public class ReversedArray {
     public static void main(String[] args) {
