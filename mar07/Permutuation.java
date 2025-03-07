@@ -1,3 +1,4 @@
+package mar07;
 public class Permutuation {
     public static void main(String[] args) {
         String name = "abc";

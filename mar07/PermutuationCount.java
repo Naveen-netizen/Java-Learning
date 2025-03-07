@@ -1,3 +1,4 @@
+package mar07;
 public class PermutuationCount {
     public static void main(String[] args) {
          String in="abcdefghijkl";
