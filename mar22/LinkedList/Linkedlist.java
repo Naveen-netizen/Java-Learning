@@ -1,3 +1,4 @@
+package mar22.LinkedList;
 public class Linkedlist {
     public static void main(String[] args) {
         LL list = new LL();

@@ -1,3 +1,4 @@
+package mar19;
 public class Merge {
     public static void main(String[] args) {
         int[] arr1={1,2};
