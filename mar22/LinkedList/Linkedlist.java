@@ -1,4 +1,5 @@
 package mar22.LinkedList;
+
 public class Linkedlist {
     public static void main(String[] args) {
         LL list = new LL();
@@ -10,15 +11,16 @@ public class Linkedlist {
         list.insertLast(5);
         list.insertLast(0);
         list.insertAt(0, 3);
-        list.display();
-        System.out.println(list.deleteLast());
+        // list.display();
+        list.insert(7,8);
+        // System.out.println(list.deleteLast());
         list.display();
     }
 
 }
 
 class LL {
-    private Node head;
+    public Node head;
     private Node tail;
     private int size;
 
@@ -81,6 +83,20 @@ class LL {
         temp.next = node;
         size++;
         return;
+    }
+
+    // Inserting a node at a particular index using recursion
+    private Node insertAt(Node node, int val, int index) {
+        if (index == 0) {
+            Node NewNode = new Node(val, node);
+            return NewNode;
+        }
+        node.next = insertAt(node.next, val, index - 1);
+        return node;
+    }
+
+    public void insert(int val, int index) {
+       head=insertAt(head, val, index);
     }
 
     // retriving a node at a particular index
