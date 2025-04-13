@@ -1,4 +1,4 @@
-package mar22.LinkedList;
+package apr02;
 
 public class Linkedlist {
     public static void main(String[] args) {
@@ -11,9 +11,9 @@ public class Linkedlist {
         list.insertLast(5);
         list.insertLast(0);
         list.insertAt(0, 3);
-        // list.display();
-        list.insert(7,8);
-        // System.out.println(list.deleteLast());
+        list.insert(7, 8);
+        list.display();
+        list.reverse(list.head);
         list.display();
     }
 
@@ -24,15 +24,15 @@ class LL {
     private Node tail;
     private int size;
 
-    public class Node {
+    private class Node {
         int value;
         Node next;
 
-        public Node(int value) {
+        private Node(int value) {
             this.value = value;
         }
 
-       public Node(int value, Node next) {
+        private Node(int value, Node next) {
             this.value = value;
             this.next = next;
         }
@@ -96,7 +96,7 @@ class LL {
     }
 
     public void insert(int val, int index) {
-       head=insertAt(head, val, index);
+        head = insertAt(head, val, index);
     }
 
     // retriving a node at a particular index
@@ -157,6 +157,34 @@ class LL {
             node = node.next;
         }
         return null;
+    }
+
+    public void reverse(Node node) {
+        if (node == null || node.next == null) {
+            head = node; // The last node becomes the new head
+            return;
+        }
+    
+        reverse(node.next); // Recursive call
+    
+        node.next.next = node; // Reverse the current node's link
+        node.next = null; // Avoid cycle
+    }
+    
+
+    public void Reverse(Node node) {
+        Node prev = null;
+        Node pres = head;
+        Node next = pres.next;
+        while (pres != null) {
+            pres.next = prev;
+            prev = pres;
+            pres = next;
+            if (next != null) {
+                next = next.next;
+            }
+        }
+        head=prev;
     }
 
     // displaying the entire list
